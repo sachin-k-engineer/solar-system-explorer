@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3D Solar System Explorer</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- Loading overlay -->
+  <div id="loading">
+    <div class="loader-ring"></div>
+    <h2>Loading Solar System&hellip;</h2>
+    <p id="loading-msg">Fetching the Three.js engine&hellip;</p>
+  </div>
+
+  <!-- Title -->
+  <header id="topbar">
+    <h1>&#128301; 3D Solar System Explorer</h1>
+    <span class="subtitle">Interactive WebGL Project</span>
+  </header>
+
+  <!-- Sidebar: body list + info panel -->
+  <aside id="sidebar">
+    <div class="panel" id="list-panel">
+      <input id="search" type="text" placeholder="&#128269; Search Sun, planets, moons&hellip;" autocomplete="off" />
+      <div id="body-list"></div>
+    </div>
+    <div class="panel" id="info-panel">
+      <h2 id="info-name">Welcome!</h2>
+      <div id="info-content">
+        <p>Click the Sun, a planet, or a moon to see its details and fly the camera to it.</p>
+        <p style="margin-top:8px">Drag to orbit &middot; scroll to zoom &middot; right-drag to pan.</p>
+      </div>
+    </div>
+  </aside>
+
+  <!-- 3D labels layer & hover tooltip -->
+  <div id="labels"></div>
+  <div id="tooltip"></div>
+
+  <!-- Bottom control bar -->
+  <div id="controls-bar">
+    <button id="btn-pause" title="Shortcut: Space">&#10074;&#10074; Pause</button>
+    <label class="speed">Speed
+      <input id="speed" type="range" min="0" max="4" step="0.1" value="1" />
+      <span id="speed-val">1.0&times;</span>
+    </label>
+    <button id="btn-orbits" class="toggle active">Orbits</button>
+    <button id="btn-labels" class="toggle active">Labels</button>
+    <button id="btn-wire" class="toggle">Wireframe</button>
+    <button id="btn-reset" title="Shortcut: Esc">&#10227; Reset View</button>
+  </div>
+
+  <div id="hint">Drag: rotate &middot; Scroll: zoom &middot; Right-drag: pan &middot; Click: select &middot; Esc: reset</div>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
